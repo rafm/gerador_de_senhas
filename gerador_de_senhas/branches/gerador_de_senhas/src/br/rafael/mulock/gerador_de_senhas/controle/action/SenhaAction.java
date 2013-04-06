@@ -5,13 +5,13 @@ import java.util.Map;
 public class SenhaAction {
 
 	public String gerarSenha(Map<String, String> parametros) throws Exception {
-		
+
 		int qtdCaracteres;
 		
 		try {
 			qtdCaracteres = Integer.parseInt(parametros.get("qtdCaracteres"));
 		} catch (Exception e) {
-			parametros.put("mensagem", "Informe somente números no campor \"Quantidade de caracteres\"");
+			parametros.put("mensagem", "Informe somente números no campo \"Quantidade de caracteres\"");
 			return null;
 		}
 

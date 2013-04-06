@@ -56,6 +56,7 @@ public class TelaPrincipal extends JFrame {
 	public TelaPrincipal() {
 		setTitle("Gerador de senhas");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
 		setBounds(100, 100, 600, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -142,23 +143,34 @@ public class TelaPrincipal extends JFrame {
 				String senha = null;
 				try {
 					senha = senhaAction.gerarSenha(parametros);
-					if (senha != null) textField_6.setText(senha);
+					if (senha == null) {
+						textField_6.setEnabled(false);
+						textField_6.setVisible(false);
+						textField_6.setText("");
+					} else {
+						textField_6.setEnabled(true);
+						textField_6.setVisible(true);
+						textField_6.setText(senha);
+					}
+					
 					String mensagem = parametros.get("mensagem");
 					if (mensagem == null)
 						JOptionPane.showMessageDialog(null, "Houve um erro desconhecido.");
 					else
 						JOptionPane.showMessageDialog(null, mensagem);
+					
 				} catch (Exception e) {
 					JOptionPane.showMessageDialog(null, "Houve um erro:\n"+e.getMessage());
 				}
 			}
 		});
-		btnGerarSenha.setBounds(10, 153, 97, 23);
+		btnGerarSenha.setBounds(10, 153, 111, 23);
 		contentPane.add(btnGerarSenha);
 		
 		textField_6 = new JTextField();
 		textField_6.setEnabled(false);
 		textField_6.setEditable(false);
+		textField_6.setVisible(false);
 		textField_6.setBounds(10, 204, 160, 20);
 		contentPane.add(textField_6);
 		textField_6.setColumns(10);
