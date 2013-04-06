@@ -18,6 +18,11 @@ import br.rafael.mulock.gerador_de_senhas.controle.action.SenhaAction;
 
 public class TelaPrincipal extends JFrame {
 
+
+	/**
+	 * Versão 1.0 da parte visual da aplicação
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtA;
 	private JTextField textField;
