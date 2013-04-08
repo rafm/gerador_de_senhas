@@ -67,7 +67,6 @@ public final class TelaPrincipal extends JFrame {
 		JButton btnGerarSenha = new JButton("Seguinte");
 		btnGerarSenha.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
 				if("".equals(txtQtdCaracteres.getText())) {
 					JOptionPane.showMessageDialog(null, "Digite uma quantidade de caracteres");
 				} else {
