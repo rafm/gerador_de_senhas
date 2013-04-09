@@ -81,11 +81,6 @@ public final class SenhaAction {
 			int isSimbolo;
 			
 			for (int i = 1; i <= qtdCaracteres; i++) {
-				flagLetrasMinusculas = false;
-				flagLetrasMaiusculas = false;
-				flagNumeros = false;
-				flagSimbolos = false;
-				
 				valorTotal = 0;
 				
 				isCaracterMinusculo = 0;
@@ -94,22 +89,18 @@ public final class SenhaAction {
 				isSimbolo = 0;
 				
 				if (listaLetrasMinusculas.contains(i)) {
-					flagLetrasMinusculas = true;
 					isCaracterMinusculo = ++valorTotal;
 				}
 				
 				if (listaLetrasMaiusculas.contains(i)) {
-					flagLetrasMaiusculas = true;
 					isCaracterMaiusculo = ++valorTotal;
 				}
 				
 				if (listaNumeros.contains(i)) {
-					flagNumeros = true;
 					isNumero = ++valorTotal;
 				}
 				
 				if (listaSimbolos.contains(i)) {
-					flagSimbolos = true;
 					isSimbolo = ++valorTotal;
 				}
 				
@@ -141,7 +132,7 @@ public final class SenhaAction {
 						}
 					}
 				} else {
-					int verificar = 1 + ((int) Math.random() * valorTotal);
+					int verificar = 1 + ((int) (Math.random() * valorTotal));
 					
 					if (verificar == isCaracterMinusculo) {
 						senha = senha + (char) (VALOR_INICIAL_CARACTERES_MINUSCULOS + (Math.random() * (1+(VALOR_FINAL_CARACTERES_MINUSCULOS - VALOR_INICIAL_CARACTERES_MINUSCULOS))));
