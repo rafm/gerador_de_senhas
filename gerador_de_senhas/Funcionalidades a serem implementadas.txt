@@ -1,0 +1,5 @@
+Gerar dados a partir de arquivos .txt;
+Registros com campos nome, tipo, login e senha;
+Criptografar o arquivos com as senhas salvar;
+Salvar o arquivo das senha aonde eu quero ou na mesma pasta da aplicação;
+Configurar e avisar a data de troca das senhas.
